@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <h1>bat ball game</h1>
+
+      <button onclick="
+       let redom = Math.random() * 3;
+
+      let chouseComopu;
+      if (redom > 0 && redom <=1) {
+            chouseComopu = 'bat';
+           
+      }else if(redom > 1 && redom <=2){
+            chouseComopu = 'ball';
+           
+      }else {
+            chouseComopu = 'stump'; 
+      }
+
+      console.log('chouseComopu :' + chouseComopu);
+
+
+      let res;
+      if(chouseComopu === 'ball'){
+            res = 'you are win';
+      }
+      else if(chouseComopu === 'bat'){
+            res = 'game is tie';
+
+      }else if(chouseComopu === 'stump'){
+            res = 'comopu win';
+      }
+      
+
+      alert(`your choise bat, computer choise ${chouseComopu}  and ${res}`)
+
+
+      ">btn</button>
+
+
+
+      <button onclick="
+       redom = Math.random() * 3;
+     
+
+       chouseComopu;
+      if (redom > 0 && redom <=1) {
+            chouseComopu = 'bat';
+           
+      }else if(redom > 1 && redom <=2){
+            chouseComopu = 'ball';
+           
+      }else {
+            chouseComopu = 'stump'; 
+      }
+
+       res;
+      if(chouseComopu === 'ball'){
+            res = 'game is tie';
+      }
+      else if(chouseComopu === 'bat'){
+            res = 'game is win';
+
+      }else if(chouseComopu === 'stump'){
+            res = 'comopu win';
+      }
+    
+      alert(`your choise ball, computer choise ${chouseComopu}  and ${res}`)
+
+      ">ball</button>
+</body>
+
+</html>
