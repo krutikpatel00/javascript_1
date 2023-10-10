@@ -10,71 +10,169 @@
 <body>
       <h1>bat ball game</h1>
 
-      <button onclick="
-       let redom = Math.random() * 3;
+      <button onclick="bat()">btn</button>
+      <button onclick="ball()">ball</button>
+      <button onclick="stump()">stump</button>
 
-      let chouseComopu;
-      if (redom > 0 && redom <=1) {
-            chouseComopu = 'bat';
-           
-      }else if(redom > 1 && redom <=2){
-            chouseComopu = 'ball';
-           
-      }else {
-            chouseComopu = 'stump'; 
-      }
+      <table border="">
+            <tr>
+                  <th>Your choise</th>
+                  <th>
+                        <p id="myChoise">none</p>
+                  </th>
+            </tr>
+            <tr>
+                  <th>Computer choise</th>
+                  <th>
+                        <p id="computerCho">none</p>
+                  </th>
+            </tr>
+            <tr>
+                  <th>youwin :</th>
+                  <th>
+                        <p id="youWin">none</p>
+                  </th>
+            </tr>
+            <tr>
+                  <th>computer win :</th>
+                  <th>
+                        <p id="comWin">none</p>
+                  </th>
+            </tr>
+      </table>
 
-      console.log('chouseComopu :' + chouseComopu);
+      <br>
+      <h2>rule :</h2>
+      <ul>
+            <li>youchose ban and computer ball you win</li>
+            <li>youchose ball and computer bat computer win</li>
+            <li>youchose stump and computer bat you win</li>
+            <li>youchose stump and computer ball you tie</li>
+      </ul>
+
+      <script>
+            let redom = Math.random() * 3;
+            let chouseComopu;
+            let youWin;
+            let comWin;
+            let myChoise;
+            function bat() {
+                  myChoise = 'bat'
+                  document.getElementById('myChoise').innerHTML = myChoise;
+                  if (redom > 0 && redom <= 1) {
+                        chouseComopu = 'bat';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
+
+                  } else if (redom > 1 && redom <= 2) {
+                        chouseComopu = 'ball';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
+
+                  } else {
+                        chouseComopu = 'stump';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
+                  }
+
+                  if (chouseComopu === 'ball') {
+                        youWin = 'win';
+                        comWin = "loss";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+                  else if (chouseComopu === 'bat') {
+                        youWin = 'tie';
+                        comWin = "tie";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+
+                  } else if (chouseComopu === 'stump') {
+                        youWin = 'loss';
+                        comWin = "win";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+            }
+
+            function ball() {
+                  myChoise = 'ball'
+                  document.getElementById('myChoise').innerHTML = myChoise;
+
+                  if (redom > 0 && redom <= 1) {
+                        chouseComopu = 'bat';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
 
 
-      let res;
-      if(chouseComopu === 'ball'){
-            res = 'you are win';
-      }
-      else if(chouseComopu === 'bat'){
-            res = 'game is tie';
-
-      }else if(chouseComopu === 'stump'){
-            res = 'comopu win';
-      }
-      
-
-      alert(`your choise bat, computer choise ${chouseComopu}  and ${res}`)
+                  } else if (redom > 1 && redom <= 2) {
+                        chouseComopu = 'ball';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
 
 
-      ">btn</button>
+                  } else {
+                        chouseComopu = 'stump';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
+
+                  }
+
+                  if (chouseComopu === 'ball') {
+                        youWin = 'tie';
+                        comWin = "tie";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+                  else if (chouseComopu === 'bat') {
+                        youWin = 'loss';
+                        comWin = "win";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+
+                  } else if (chouseComopu === 'stump') {
+                        youWin = 'win';
+                        comWin = "loss";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+            }
+
+            function stump() {
+
+                  myChoise = 'stump'
+                  document.getElementById('myChoise').innerHTML = myChoise;
+
+                  if (redom > 0 && redom <= 1) {
+                        chouseComopu = 'bat';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
 
 
+                  } else if (redom > 1 && redom <= 2) {
+                        chouseComopu = 'ball';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
 
-      <button onclick="
-       redom = Math.random() * 3;
-     
 
-       chouseComopu;
-      if (redom > 0 && redom <=1) {
-            chouseComopu = 'bat';
-           
-      }else if(redom > 1 && redom <=2){
-            chouseComopu = 'ball';
-           
-      }else {
-            chouseComopu = 'stump'; 
-      }
+                  } else {
+                        chouseComopu = 'stump';
+                        document.getElementById('computerCho').innerHTML = chouseComopu;
 
-       res;
-      if(chouseComopu === 'ball'){
-            res = 'game is tie';
-      }
-      else if(chouseComopu === 'bat'){
-            res = 'game is win';
+                  }
 
-      }else if(chouseComopu === 'stump'){
-            res = 'comopu win';
-      }
-    
-      alert(`your choise ball, computer choise ${chouseComopu}  and ${res}`)
+                  if (chouseComopu === 'ball') {
+                        youWin = 'tie';
+                        comWin = "tie";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+                  else if (chouseComopu === 'bat') {
+                        youWin = 'win';
+                        comWin = "loss";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
 
-      ">ball</button>
+                  } else if (chouseComopu === 'stump') {
+                        youWin = 'tie';
+                        comWin = "tie";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  }
+            }
+      </script>
 </body>
 
 </html>
