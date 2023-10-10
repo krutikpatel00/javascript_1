@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+
+      <h1 id="h1">javascript is best</h1>
+      <button id="btn">stop</button>
+
+
+      <script>
+            let h1 = document.getElementById("h1")
+            // setTimeout(function () {
+            //       h1.innerHTML = "krutik is best lrean javascript"
+            // }, 4000)
+
+            let chengText = function () {
+                  h1.innerHTML = "krutik is best lrean javascript"
+            }
+            let stop = setTimeout(chengText, 4000)
+
+            let btn = document.getElementById("btn")
+            btn.addEventListener("click", function () {
+                  clearTimeout(stop)
+                  console.log("stop");
+            })
+      </script>
+</body>
+
+</html>

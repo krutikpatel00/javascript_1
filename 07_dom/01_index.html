@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body class="" style="background-color: rgba(27, 26, 26, 0.837); color:rgb(255, 255, 255)">
+
+
+      <div class="parent">
+            <div class="day">monday</div>
+            <div class="day">tusday</div>
+            <div class="day">wensday</div>
+            <div class="day">triday</div>
+      </div>
+
+      <script>
+            let parent = document.querySelector(".parent")
+
+            console.log(parent);
+            // console.log(parent.children);
+            // console.log(parent.children[1].innerHTML);
+
+            // for (let i = 0; i < parent.children.length; i++) {
+            //       console.log(parent.children[i]);
+            // }
+            // console.log(parent.firstElementChild);
+            // console.log(parent.lastElementChild);
+
+            let day = document.querySelector(".day")
+            console.log(day.nextElementSibling);
+            console.log(day.parentElement);
+            console.log(parent.childNodes);
+      </script>
+</body>
+
+</html>

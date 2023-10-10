@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <ul class="lenguage">
+            <li>javascript</li>
+      </ul>
+
+
+      <script>
+            function addLenguage(lengName) {
+                  let li = document.createElement("li");
+                  li.innerHTML = `${lengName}`;
+
+                  let add = document.querySelector(".lenguage")
+                  add.appendChild(li)
+            }
+            addLenguage("java")
+
+            function addOptLeng(lengName) {
+                  let li = document.createElement("li")
+                  li.appendChild(document.createTextNode(lengName))
+                  document.querySelector(".lenguage").appendChild(li)
+
+            }
+            addOptLeng("payton")
+            addOptLeng("css")
+
+            // edit
+            let seco = document.querySelector("li:nth-child(2)")
+            seco.textContent = "jav"
+            // let mego = document.createElement("li")
+            // mego.textContent = "mojo"
+            // seco.replaceWith(mego)
+
+            // edit
+            let first = document.querySelector("li:first-child")
+            first.outerHTML = "<li>node</li>"
+
+            // remove
+            let last = document.querySelector("li:last-child")
+            last.remove()
+
+      </script>
+</body>
+
+</html>

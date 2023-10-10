@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            .boxs {
+                  height: 100px;
+                  width: 100px;
+                  background-color: black;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="box">
+
+      </div>
+      <script>
+            let div = document.createElement('div')
+            let box = document.querySelector('.box')
+            console.log(div);
+            div.className = "boxs"
+            div.id = "boxs"
+            div.setAttribute("title", "texts")
+            // div.innerHTML = "krutik"
+            let text = document.createTextNode('king')
+            div.appendChild(text)
+
+            box.appendChild(div)
+            // document.body.appendChild(div)
+
+            // for (let i = 0; i < 10; i++) {
+            //       for (let k = 0; k < box.children.length; k++) {
+            //             console.log(box.children[k]);
+            //             let add = box.children[k]
+            //             document.ch
+            //       }
+            // }
+      </script>
+</body>
+
+</html>

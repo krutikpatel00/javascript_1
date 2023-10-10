@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            .box {
+                  height: 500px;
+                  width: 500px;
+                  border: 1px solid black;
+                  margin: 100px;
+            }
+      </style>
+</head>
+
+<button class="start">start</button>
+<button class="stop">stop</button>
+
+<div class="box"></div>
+
+<body>
+
+
+      <script>
+
+            const rendomCOlor = function () {
+                  let hex = "0123456789ABCDEF"
+                  let color = "#"
+                  for (let i = 0; i < 6; i++) {
+                        color += hex[Math.floor(Math.random() * 16)]
+                  }
+                  return color
+            }
+            rendomCOlor()
+            console.log(rendomCOlor());
+
+
+            let start = document.querySelector(".start")
+            let end = document.querySelector(".stop")
+
+            let clickColor;
+            let startColor = function () {
+
+                  function chingColor() {
+                        let box = document.querySelector(".box")
+                        box.style.backgroundColor = rendomCOlor()
+                  }
+                  if (!clickColor) {
+                        clickColor = setInterval(chingColor, 1000)
+                  }
+
+            }
+
+            let stopColor = function () {
+                  clearInterval(clickColor)
+                  clickColor = null
+            }
+            start.addEventListener("click", startColor)
+
+            end.addEventListener("click", stopColor)
+      </script>
+</body>
+
+</html>

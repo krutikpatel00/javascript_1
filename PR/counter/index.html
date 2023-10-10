@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <button onclick="add()">
+            add item
+      </button>
+      <button onclick="less()">
+            less item
+      </button>
+
+      <p id="product"></p>
+
+      <script>
+            let product = 0;
+            document.getElementById("product").innerHTML = `product ${product}`;
+
+            function add() {
+                  if (product < 10) {
+                        product = product + 1;
+                        document.getElementById('product').innerHTML = `product ${product}`;
+                  }
+            }
+            function less() {
+                  if (product > 0) {
+                        product = product - 1;
+                        document.getElementById('product').innerHTML = `product ${product}`;
+                  }
+            }
+      </script>
+</body>
+
+</html>

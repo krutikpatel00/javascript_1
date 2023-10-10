@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            * {
+                  padding: 0;
+                  margin: 0;
+                  box-sizing: border-box;
+            }
+
+            body {
+                  width: 100%;
+                  height: 100vh;
+                  position: relative;
+            }
+
+            .box {
+                  width: 325px;
+                  padding: 15px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  background-color: #26313d;
+                  border-radius: 15px;
+            }
+
+            #inputCalu {
+                  width: 100%;
+                  padding: 10px;
+                  font-size: 18px;
+                  border-radius: 10px;
+                  outline: 0;
+                  color: white;
+                  text-align: end;
+                  border: none;
+                  background-color: #3a526b;
+            }
+
+            .btn {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 10px;
+                  border: none;
+                  color: white;
+                  font-size: 18px;
+                  background-color: #3a526b;
+                  margin: 0 10px;
+            }
+
+            .mt-2 {
+                  margin-top: 20px;
+            }
+
+            .items {
+                  position: relative;
+
+            }
+
+            .btn-2 {
+                  height: 120px;
+                  position: absolute;
+                  right: 0;
+                  bottom: 0;
+            }
+
+            .mt-10 {
+                  margin-top: 15px;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="box">
+            <input type="text" id="inputCalu" readonly>
+            <div class="mt-2">
+                  <button class="btn" onclick="inputValue ='';
+                        document.getElementById('inputCalu').value = inputValue;">C</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '%';
+                  document.getElementById('inputCalu').value = inputValue;">%</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '/';
+                  document.getElementById('inputCalu').value = inputValue;">/</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '*';
+                  document.getElementById('inputCalu').value = inputValue;">*</button>
+            </div>
+            <div class="mt-2">
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '7';
+                  document.getElementById('inputCalu').value = inputValue">7</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '8';
+                  document.getElementById('inputCalu').value = inputValue">8</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '9';
+                  document.getElementById('inputCalu').value = inputValue">9</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '-';
+                  document.getElementById('inputCalu').value = inputValue">-</button>
+
+            </div>
+            <div class="mt-2">
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '4';
+                  document.getElementById('inputCalu').value = inputValue;">4</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '5';
+                  document.getElementById('inputCalu').value = inputValue;">5</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '6';
+                  document.getElementById('inputCalu').value = inputValue;">6</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '+';
+                  document.getElementById('inputCalu').value = inputValue;">+</button>
+            </div>
+            <div class="mt-2">
+                  <button class="btn" onclick="
+                        inputValue = inputValue + '1';
+                        document.getElementById('inputCalu').value = inputValue;">1</button>
+                  <button class=" btn" onclick="
+                  inputValue = inputValue + '2';
+                  document.getElementById('inputCalu').value = inputValue;">2</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '3';
+                  document.getElementById('inputCalu').value = inputValue;">3</button>
+
+            </div>
+            <div class="mt-2 items">
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '0';
+                  document.getElementById('inputCalu').value = inputValue;">0</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '00';
+                  document.getElementById('inputCalu').value = inputValue;">00</button>
+                  <button class="btn" onclick="
+                  inputValue = inputValue + '.';
+                  document.getElementById('inputCalu').value = inputValue;">.</button>
+                  <button class="btn btn-2" onclick="
+                  let res = eval(inputValue);
+                  document.getElementById('inputCalu').value = res;">=</button>
+            </div>
+      </div>
+
+      <script>
+            let inputValue = '';
+            document.getElementById("inputCalu").value = inputValue;
+      </script>
+</body>
+
+</html>
