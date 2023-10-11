@@ -51,14 +51,13 @@
       </ul>
 
       <script>
-            let redom = Math.random() * 3;
-            let chouseComopu;
+
             let youWin;
             let comWin;
             let myChoise;
-            function bat() {
-                  myChoise = 'bat'
-                  document.getElementById('myChoise').innerHTML = myChoise;
+
+            function rud() {
+                  let redom = Math.random() * 3;
                   if (redom > 0 && redom <= 1) {
                         chouseComopu = 'bat';
                         document.getElementById('computerCho').innerHTML = chouseComopu;
@@ -71,6 +70,13 @@
                         chouseComopu = 'stump';
                         document.getElementById('computerCho').innerHTML = chouseComopu;
                   }
+            }
+
+            function bat() {
+                  myChoise = 'bat'
+                  document.getElementById('myChoise').innerHTML = myChoise;
+
+                  rud()
 
                   if (chouseComopu === 'ball') {
                         youWin = 'win';
@@ -96,21 +102,7 @@
                   myChoise = 'ball'
                   document.getElementById('myChoise').innerHTML = myChoise;
 
-                  if (redom > 0 && redom <= 1) {
-                        chouseComopu = 'bat';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-
-                  } else if (redom > 1 && redom <= 2) {
-                        chouseComopu = 'ball';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-
-                  } else {
-                        chouseComopu = 'stump';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-                  }
+                  rud()
 
                   if (chouseComopu === 'ball') {
                         youWin = 'tie';
@@ -137,21 +129,7 @@
                   myChoise = 'stump'
                   document.getElementById('myChoise').innerHTML = myChoise;
 
-                  if (redom > 0 && redom <= 1) {
-                        chouseComopu = 'bat';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-
-                  } else if (redom > 1 && redom <= 2) {
-                        chouseComopu = 'ball';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-
-                  } else {
-                        chouseComopu = 'stump';
-                        document.getElementById('computerCho').innerHTML = chouseComopu;
-
-                  }
+                  rud()
 
                   if (chouseComopu === 'ball') {
                         youWin = 'tie';
