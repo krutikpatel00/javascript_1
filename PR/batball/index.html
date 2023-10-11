@@ -44,20 +44,20 @@
       <br>
       <h2>rule :</h2>
       <ul>
-            <li>youchose ban and computer ball you win</li>
-            <li>youchose ball and computer bat computer win</li>
-            <li>youchose stump and computer bat you win</li>
-            <li>youchose stump and computer ball you tie</li>
+            <li>
+                  ===
+
+            </li>
       </ul>
 
       <script>
 
-            let youWin;
-            let comWin;
-            let myChoise;
+
+
 
             function rud() {
                   let redom = Math.random() * 3;
+                  let chouseComopu;
                   if (redom > 0 && redom <= 1) {
                         chouseComopu = 'bat';
                         document.getElementById('computerCho').innerHTML = chouseComopu;
@@ -70,84 +70,55 @@
                         chouseComopu = 'stump';
                         document.getElementById('computerCho').innerHTML = chouseComopu;
                   }
+                  return chouseComopu
             }
 
-            function bat() {
-                  myChoise = 'bat'
-                  document.getElementById('myChoise').innerHTML = myChoise;
-
-                  rud()
-                  if (chouseComopu === 'ball') {
+            function reslt(user, com) {
+                  let youWin;
+                  let comWin;
+                  if (user === com || (user === 'stump' && com === 'ball') || (user === 'ball' && com === 'stump')) {
+                        youWin = 'tie';
+                        comWin = "tie";
+                        document.getElementById("youWin").innerHTML = youWin;
+                        document.getElementById("comWin").innerHTML = comWin;
+                  } else if ((user === 'bat' || user === 'stump') && com === 'ball') {
                         youWin = 'win';
                         comWin = "loss";
                         document.getElementById("youWin").innerHTML = youWin;
                         document.getElementById("comWin").innerHTML = comWin;
-                  }
-                  else if (chouseComopu === 'bat') {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-
-                  } else if (chouseComopu === 'stump') {
+                  } else if (user === 'ball' && (com === 'bat' || com === 'stump')) {
                         youWin = 'loss';
                         comWin = "win";
                         document.getElementById("youWin").innerHTML = youWin;
                         document.getElementById("comWin").innerHTML = comWin;
                   }
+                  else {
+                        console.log("click ageain");
+                  }
+
+                  return youWin, comWin;
+            }
+            function bat() {
+                  let myChoise = 'bat'
+                  document.getElementById('myChoise').innerHTML = myChoise;
+                  let computerChs = rud();
+                  reslt(myChoise, computerChs);
             }
 
+
             function ball() {
-                  myChoise = 'ball'
+                  let myChoise = 'ball'
                   document.getElementById('myChoise').innerHTML = myChoise;
+                  let computerChs = rud();
+                  reslt(myChoise, computerChs);
 
-                  rud()
-
-                  if (chouseComopu === 'ball') {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  }
-                  else if (chouseComopu === 'bat') {
-                        youWin = 'loss';
-                        comWin = "win";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-
-                  } else if (chouseComopu === 'stump') {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  }
             }
 
             function stump() {
-
-                  myChoise = 'stump'
+                  let myChoise = 'stump'
                   document.getElementById('myChoise').innerHTML = myChoise;
-
-                  rud()
-
-                  if (chouseComopu === 'ball') {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  }
-                  else if (chouseComopu === 'bat') {
-                        youWin = 'win';
-                        comWin = "loss";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-
-                  } else if (chouseComopu === 'stump') {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  }
+                  let computerChs = rud();
+                  reslt(myChoise, computerChs);
             }
       </script>
 </body>
