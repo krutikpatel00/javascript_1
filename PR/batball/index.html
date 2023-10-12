@@ -41,19 +41,32 @@
             </tr>
       </table>
 
-      <br>
-      <h2>rule :</h2>
-      <ul>
-            <li>
-                  ===
+      <table>
+            <tr>
+                  <th>win</th>
+                  <th>loss</th>
+                  <th>tie</th>
+            </tr>
+            <tr>
+                  <th id="win"></th>
+                  <th id="loss"></th>
+                  <th id="tie"></th>
+            </tr>
+      </table>
 
-            </li>
-      </ul>
+      <br>
+
+
 
       <script>
-
-
-
+            let score = {
+                  win: 0,
+                  loss: 0,
+                  tie: 0,
+            }
+            document.getElementById("win").innerHTML = `you win ${score.win}`
+            document.getElementById("loss").innerHTML = `you loss ${score.loss}`
+            document.getElementById("tie").innerHTML = `you loss ${score.tie}`
 
             function rud() {
                   let redom = Math.random() * 3;
@@ -76,25 +89,94 @@
             function reslt(user, com) {
                   let youWin;
                   let comWin;
-                  if (user === com || (user === 'stump' && com === 'ball') || (user === 'ball' && com === 'stump')) {
-                        youWin = 'tie';
-                        comWin = "tie";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  } else if ((user === 'bat' || user === 'stump') && com === 'ball') {
-                        youWin = 'win';
-                        comWin = "loss";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
-                  } else if (user === 'ball' && (com === 'bat' || com === 'stump')) {
-                        youWin = 'loss';
-                        comWin = "win";
-                        document.getElementById("youWin").innerHTML = youWin;
-                        document.getElementById("comWin").innerHTML = comWin;
+                  let sco;
+                  if (user === 'bat') {
+                        if (com === 'bat') {
+                              youWin = 'tie';
+                              comWin = "tie";
+                              sco = score.tie++;
+                              document.getElementById("tie").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+
+                        } else if (com === 'ball') {
+                              youWin = 'win';
+                              comWin = "loss";
+                              sco = score.win++;
+                              document.getElementById("win").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        } else if (com === 'stump') {
+                              youWin = 'loss';
+                              comWin = "win";
+                              sco = score.loss++;
+                              document.getElementById("loss").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        }
+
                   }
-                  else {
-                        console.log("click ageain");
+                  else if (user === 'ball') {
+                        if (com === 'ball') {
+                              youWin = 'tie';
+                              comWin = "tie";
+                              sco = score.tie++;
+                              document.getElementById("tie").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        } else if (com === 'bat') {
+                              youWin = 'loss';
+                              comWin = "win";
+                              sco = score.loss++;
+                              document.getElementById("loss").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        } else if (com === 'stump') {
+                              youWin = 'tie';
+                              comWin = "tie";
+                              sco = score.tie++;
+                              document.getElementById("tie").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        }
+
                   }
+                  else if (user === 'stump') {
+                        if (com === 'ball') {
+                              youWin = 'tie';
+                              comWin = "tie";
+                              sco = score.tie++;
+                              document.getElementById("loss").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        } else if (com === 'bat') {
+                              youWin = 'win';
+                              comWin = "loss";
+                              sco = score.win++;
+                              document.getElementById("win").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+
+                        } else if (com === 'stump') {
+                              youWin = 'tie';
+                              comWin = "tie";
+                              sco = score.tie++;
+                              document.getElementById("tie").innerHTML = `you win ${sco}`;
+                              document.getElementById("youWin").innerHTML = youWin;
+                              document.getElementById("comWin").innerHTML = comWin;
+                        }
+
+                  } else {
+                        console.log("geme");
+                  }
+
 
                   return youWin, comWin;
             }
@@ -103,6 +185,7 @@
                   document.getElementById('myChoise').innerHTML = myChoise;
                   let computerChs = rud();
                   reslt(myChoise, computerChs);
+
             }
 
 
